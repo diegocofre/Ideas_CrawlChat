@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Usuario - Crawler GPT</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #0056b3;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            margin-bottom: 20px;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .section h2 {
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 10px;
+        }
+        .section p {
+            line-height: 1.6;
+        }
+        .section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .section ul li {
+            background: #e9ecef;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Manual de Usuario del Sistema "Crawler GPT"</h1>
+        
+        <div class="section">
+            <h2>Descripción del Sistema</h2>
+            <p>El sistema "Crawler GPT" es una aplicación de escritorio diseñada para realizar rastreos web y procesar el contenido utilizando modelos de lenguaje GPT. La aplicación permite a los usuarios iniciar nuevos procesos de rastreo, ver el historial de rastreos anteriores, y gestionar los resultados obtenidos. </p>
+        </div>
+        
+        <div class="section">
+            <h2>Instrucciones de Uso</h2>
+            
+            <h3>Menú Principal</h3>
+            <img src="img/manual_menu.jpg" alt="Menú Principal">
+            <ul>
+                <li><strong>Nuevo Batch</strong>: Inicia un nuevo proceso de rastreo web.</li>
+                <li><strong>Ver Históricos</strong>: Muestra el historial de rastreos anteriores.</li>
+                <li><strong>Salir</strong>: Cierra la aplicación.</li>
+            </ul>
+            
+            <h3>Consola de Batch</h3>
+            <img src="img/manual_consola.jpg" alt="Consola de Batch">
+            <ul>
+                <li><strong>Consola de Batch</strong>: Muestra la salida en tiempo real del proceso de rastreo.</li>
+                <li><strong>Copiar al Portapapeles</strong>: Copia el contenido de la consola al portapapeles.</li>
+                <li><strong>Cancelar Batch</strong>: Cancela el proceso de rastreo en curso.</li>
+            </ul>
+            
+            <h3>Nuevo Batch</h3>
+            <img src="img/manual_nuevo.jpg" alt="Nuevo Batch">
+            <ul>
+                <li><strong>URL Inicial</strong>: Introduce la URL desde donde comenzará el rastreo.</li>
+                <li><strong>Profundidad</strong>: Establece la profundidad del rastreo.</li>
+                <li><strong>Sitios</strong>: Define el número máximo de sitios a rastrear.</li>
+                <li><strong>Caracteres</strong>: Especifica el límite de caracteres a procesar.</li>
+                <li><strong>Guardar e Iniciar</strong>: Comienza el proceso de rastreo con los parámetros especificados.</li>
+            </ul>
+            
+            <h3>Vista de Batch</h3>
+            <img src="img/manual_vista.jpg" alt="Vista de Batch">
+            <ul>
+                <li><strong>Detalles del Batch</strong>: Muestra los detalles del batch seleccionado, incluyendo la URL inicial, fechas de inicio y fin, y el contenido rastreado.</li>
+                <li><strong>Copiar al Portapapeles</strong>: Copia el informe del batch al portapapeles.</li>
+                <li><strong>Cerrar</strong>: Cierra la ventana de vista del batch.</li>
+            </ul>
+
+            <h3>Históricos</h3>
+            <img src="img/manual_historico.jpg" alt="Históricos">
+            <ul>
+                <li><strong>Tabla de Históricos</strong>: Muestra una lista de todos los batches anteriores con sus detalles.</li>
+                <li><strong>Reiniciar</strong>: Permite reiniciar un batch seleccionado.</li>
+                <li><strong>Ver</strong>: Muestra los detalles del batch seleccionado.</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>Ejemplo de Uso</h2>
+            <p>1. <strong>Iniciar la Aplicación</strong>: Ejecuta el archivo <code>CrawlerGPT.exe</code> para abrir la aplicación.</p>
+            <p>2. <strong>Menú Principal</strong>: Selecciona "Nuevo Batch" para iniciar un nuevo proceso de rastreo. Selecciona "Ver Históricos" para ver el historial de rastreos anteriores. Selecciona "Salir" para cerrar la aplicación.</p>
+            <p>3. <strong>Nuevo Batch</strong>: Introduce los parámetros necesarios (URL inicial, profundidad, sitios, caracteres). Haz clic en "Iniciar" para comenzar el rastreo. La consola de batch se abrirá automáticamente para mostrar el progreso.</p>
+            <p>4. <strong>Consola de Batch</strong>: Observa el progreso del rastreo en tiempo real. Usa el botón "Copiar al Portapapeles" para copiar el contenido de la consola. Usa el botón "Cancelar Batch" para detener el proceso de rastreo.</p>
+            <p>5. <strong>Ver Históricos</strong>: Selecciona un batch del historial para ver sus detalles. Usa los botones de la tabla para reiniciar un batch o ver sus detalles.</p>
+            <p>6. <strong>Vista de Batch</strong>: Revisa los detalles del batch seleccionado. Usa el botón "Copiar al Portapapeles" para copiar el informe. Usa el botón "Cerrar" para cerrar la ventana de vista del batch.</p>
+        </div>
+    </div>
+</body>
+</html>

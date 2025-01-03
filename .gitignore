@@ -1,0 +1,7 @@
+/.venv
+/build
+app.db
+dist/app.db
+ms-playwright/chromium_headless_shell-1148/chrome-win/debug.log
+src/__pycache__
+dist/
