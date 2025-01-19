@@ -7,7 +7,7 @@ class dcOracle:
     def __init__(self):
         load_dotenv()
         self.client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-        self.engine = "gpt-4-turbo"
+        self.engine = "gpt-4o-mini"
 
     def process_web(self, text, prompt):
         try:

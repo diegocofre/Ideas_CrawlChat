@@ -16,7 +16,7 @@ Ideas CrawlChat es una aplicación diseñada para rastrear sitios web, extraer c
 Para ejecutar este proyecto, necesitarás instalar las siguientes dependencias:
 
 - **Python 3.8+**
-- **SQLAlchemy**: ORM para gestionar la base de datos.
+- **SQLAlchemy/SQLLite**: ORM para gestionar la base de datos SqlLite.
 - **Playwright**: Herramienta para la automatización de navegadores.
 - **ttkbootstrap**: Biblioteca para mejorar la apariencia de la interfaz gráfica.
 - **asyncio**: Biblioteca estándar de Python para programación asíncrona.

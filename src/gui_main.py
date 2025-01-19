@@ -11,7 +11,8 @@ def main():
     """
     Función principal para iniciar la aplicación GUI.
 
-    Autor: diego.cofre@gmail.com 12-2024, 3ra roca desde el Sol, Vía Láctea
+    Autor: diego.cofre@gmail.com 
+    12-2024, BUE, Argentina, 3ra roca desde el Sol, Vía Láctea
     """
     root = ttk.Window(themename="superhero")  # Estilo moderno
     #splash_root = show_splash_screen()

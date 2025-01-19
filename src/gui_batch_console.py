@@ -1,16 +1,16 @@
 import tkinter as tk
 from tkinter import ttk, messagebox
 from data import *
-from dcBase import format_date
+from dcProgresoBase import format_date
 from mainApp import *
 import asyncio
 import threading
 
 class BatchConsole(tk.Toplevel):
     """
-    Clase GUI para mostrar la consola del batch.
-    
-    Autor: diego.cofre@gmail.com 12-2024, 3ra roca desde el Sol, Vía Láctea
+    Clase GUI para mostrar la consola del batch.    
+    Autor: diego.cofre@gmail.com 
+    12-2024, BUE, Argentina, 3ra roca desde el Sol, Vía Láctea
     """
     def __init__(self, master, app: MainApp, batch: Batch):
         super().__init__(master)
@@ -60,6 +60,9 @@ class BatchConsole(tk.Toplevel):
         )
         self.cancel_button.pack(side=tk.RIGHT, padx=5)
 
+        # Manejar el evento de cierre de la ventana
+        self.protocol("WM_DELETE_WINDOW", self.on_close)
+
         # Inicializar el loop de eventos en un hilo aparte
         self.loop = asyncio.new_event_loop()
         threading.Thread(target=self._start_event_loop, daemon=True).start()
@@ -85,6 +88,7 @@ class BatchConsole(tk.Toplevel):
     async def _start_batch(self):
         """Método asincrónico para iniciar el procesamiento del batch."""
         try:
+            self.console_text.delete("1.0", tk.END) 
             await self.app.init_batch(self.batch)
         except asyncio.CancelledError:
             print("Task was cancelled")
@@ -110,15 +114,20 @@ class BatchConsole(tk.Toplevel):
 
     def confirm_cancel_batch(self):
         """Muestra un cuadro de diálogo de confirmación antes de cancelar el batch."""
-        if messagebox.askyesno("Confirmar", f"La tarea se cancelará ¿Está seguro?"):
-            self.cancel_batch()
+        if self.task:
+            if messagebox.askyesno("Confirmar", f"Si hay un batch en curso se cancelará ¿Está seguro?"):
+                self.cancel_batch()
 
     def cancel_batch(self):
         """Cancela la tarea de procesamiento del batch."""
         if self.task:
             print("Cancelling task...")
             self.task.cancel()
-        self.destroy()
+        self.withdraw()
+    def on_close(self):
+        """Maneja el evento de cierre de la ventana."""
+        if self.confirm_cancel_batch():
+            self.destroy()
 
 
 # Ejemplo de uso

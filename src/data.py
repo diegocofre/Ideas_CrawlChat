@@ -16,7 +16,6 @@ from sqlalchemy.orm import sessionmaker, relationship, joinedload
 from datetime import datetime
 from sqlalchemy.future import select
 
-# Base declarativa
 Base = declarative_base()
 
 

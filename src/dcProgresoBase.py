@@ -22,7 +22,8 @@ class ProgresoBase(ABC):
     """
     Clase base para el seguimiento de notificaciones de progreso.
     
-    Autor: diego.cofre@gmail.com 12-2024, 3ra roca desde el Sol, Vía Láctea
+    Autor: diego.cofre@gmail.com 
+    12-2024, BUE, Argentina, 3ra roca desde el Sol, Vía Láctea
     """
     def __init__(self):
         self._observadores = []  # Lista de funciones de callback registradas
@@ -35,7 +36,8 @@ class ProgresoBase(ABC):
             callback (function): Una función callable para recibir mensajes de progreso.
         """
         if callable(callback):
-            self._observadores.append(callback)
+            if callback not in self._observadores:
+                self._observadores.append(callback)
         else:
             raise ValueError("El callback debe ser una función callable.")
 

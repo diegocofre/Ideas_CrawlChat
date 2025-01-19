@@ -4,7 +4,7 @@ from typing import List
 from dcCrawler import dcCrawler
 from dcOracle import dcOracle
 import data
-from dcBase import print_ts, ProgresoBase
+from dcProgresoBase import print_ts, ProgresoBase
 import logging
 from data import *
 import os
@@ -19,7 +19,8 @@ class MainApp(ProgresoBase):
     """
     Clase principal de la aplicación para gestionar el rastreo web y el procesamiento.
     
-    Autor: diego.cofre@gmail.com 12-2024, 3ra roca desde el Sol, Vía Láctea
+    Autor: diego.cofre@gmail.com 
+    12-2024, BUE, Argentina, 3ra roca desde el Sol, Vía Láctea
     """
     def __init__(self):
         """
@@ -66,18 +67,21 @@ class MainApp(ProgresoBase):
                 )
                 crawler.registrar_notificador(self.notificar_progreso)
                 oracle = dcOracle()
+
                 await crawler.crawl_bfs()
+                #await crawler.crawl_recursive(batch.url_inicial, 0)
 
                 total_sites = len(crawler.visited)
+                analizar = len(crawler.analizar);
 
                 self.notificar_progreso(
-                    f"{total_sites} sitios encontrados. Obteniendo contenido..."
+                    f"{total_sites} sitios encontrados. {analizar} para analizar. Obteniendo contenido..."
                 )
-                for index, url in enumerate(crawler.visited, start=0):
+                for index, url in enumerate(crawler.analizar, start=0):
                     content = await crawler.fetch_page_content(url)
                     await data.create_batch_site(session, batch_id, url, content)
                     self.notificar_progreso(
-                        f"{url} contenido guardado ({index + 1}/{total_sites})"
+                        f"{url} contenido guardado ({index + 1}/{analizar})"
                     )
 
 

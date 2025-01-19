@@ -4,13 +4,14 @@ import ttkbootstrap as ttk
 from ttkbootstrap.constants import *
 from mainApp import *
 from data import Batch
-from dcBase import format_date  
+from dcProgresoBase import format_date  
 
 class BatchView(tk.Toplevel):
     """
-    Clase GUI para mostrar los detalles de un batch.
-
-    Autor: diego.cofre@gmail.com 12-2024, 3ra roca desde el Sol, Vía Láctea
+    Clase GUI para mostrar los detalles de un batch.   
+    
+    Autor: diego.cofre@gmail.com 
+    12-2024, BUE, Argentina, 3ra roca desde el Sol, Vía Láctea
     """
     def __init__(self, master, app : MainApp, batch_id):
         """

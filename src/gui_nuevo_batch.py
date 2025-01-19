@@ -4,13 +4,14 @@ from tkinter import StringVar, IntVar, messagebox, Listbox, Tk
 from gui_batch_console import BatchConsole
 from data import *
 from mainApp import *
-from dcBase import validate_number
+from dcProgresoBase import validate_number
 
 class NuevoBatch(ttk.Toplevel):
     """
     Clase GUI para crear y configurar un nuevo batch.
 
-    Autor: diego.cofre@gmail.com 12-2024, 3ra roca desde el Sol, Vía Láctea
+    Autor: diego.cofre@gmail.com 
+    12-2024, BUE, Argentina, 3ra roca desde el Sol, Vía Láctea
     """
     def __init__(self, master, app: MainApp, batch: Batch = None):
         """
@@ -159,7 +160,6 @@ class NuevoBatch(ttk.Toplevel):
         
         self.withdraw()
         BatchConsole(self, self.app, self.batch)
-        #self.destroy()
         self.mainloop()       
 
 
